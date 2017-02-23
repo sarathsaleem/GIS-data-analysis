@@ -1,0 +1,22 @@
+{
+    "name": "GIS",
+    "version": "0.0.1",
+    "author": {
+        "name": "Sarath"
+    },
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "dependencies" : {
+        "express": "*",
+        "express-session" : "*",
+        "cookie-parser" : "*",
+        "body-parser" : "*",
+        "stylus": "*",
+        "async" : "*",
+        "ejs" : "*"
+    },
+    "devDependencies" : {
+        "nodemon" : "*"
+    }
+}

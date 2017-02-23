@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GIS</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="style/style.css" rel="stylesheet" />
+    <link href="style/leaflet.css" rel="stylesheet" />
+    <link href="style/leaflet.groupedlayercontrol.css" rel="stylesheet" />
+
+
+    <script src="lib/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <script data-main="src/App" src="lib/require.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="screen-projects" class="pages">
+        <div class="boxSelect"  data-bind="css : { onCreate : (screen.showCreateScreen() || screen.showOpenScreen() )  }">
+            <div class="buttonBig" data-bind="click: screen.createNew" id="creteNew">Create New Project</div>
+            <div class="buttonBig" data-bind="click: screen.openScreen" id="openExisting">Open Project</div>
+        </div>
+
+        <div class="subScreen" data-bind="css : { show : screen.showCreateScreen }">
+
+            <div class="close" data-bind="click: screen.closeCreate" ></div>
+
+            <h2>Crate new project</h2>
+            <div class="row">
+                <label>Project name : </label>
+                <input data-bind="value: projectsView.newProjectName" name="newProjectName" type="text" />
+            </div>
+            <div class="row">
+                <label>Project description : </label>
+                <textarea data-bind="value: projectsView.newProjectDesc" name="newProjectDesc"  ></textarea>
+            </div>
+            <div class="buttonBig" data-bind="click: projectsView.createProject"  >CREATE</div>
+        </div>
+
+        <div class="subScreen" data-bind="css : { show : screen.showOpenScreen }">
+            <div class="close" data-bind="click: screen.closeOpenScreen" ></div>
+            <ul class="projects" data-bind="foreach: projectsView.projects.projectsList">
+                <li data-bind="click : function () { $parent.app.openProject(id) }">
+                    <span data-bind="text: name"></span> :
+                    <span data-bind="text:id.split('-')[0]"></span>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="screen-detail" class="pages container-fluid">
+
+        <div class="topPanel">
+             <div class="topMenu">
+                <div class="publish" data-bind="click: projectView.publishProject">Publish</div>
+                <div class="projectName"  data-bind="text : projectView.project.name" ></div>
+            </div>
+        </div>
+
+        <div class="leftPanel">
+            <div class="menu">
+                <div class="icon home" data-bind="click : screen.initScreen"></div>
+                <div data-bind="click : projectView.toggleShowData.bind(projectView), css : { showLevel :  projectView.showData }" class="icon data">
+                     <div  class="menuLevel1" >
+                        <ul class="data-menu">
+                            <li data-bind="text : projectView.project.name"> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div id="mapScene"></div>
+        <div class="rightPanel">
+
+            <div class="bigButtons">
+                <label>Upload Data <input name="dataFile" type="file" /></label>
+            </div>
+            <div class="properties">
+                <p>Data Connectors</p>
+                 <div class="bigButtons">
+                     <label>Twitter API</label>
+                </div>
+                <div class="bigButtons">
+                     <label>Custom data</label>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

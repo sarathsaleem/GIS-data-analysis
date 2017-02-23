@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans'), local('OpenSans'), url(OpenSans.woff) format('woff');
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #3C3C3C;
+}
+.dashboard {
+    background-color: #EFF5D6;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #9ECAA0;
+}
+label,
+p {
+    font-weight: normal;
+}
+input,
+textarea {
+    color: #2a2a2a;
+}
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.pages {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #2E2E35;
+    color: #fff;
+}
+.boxSelect {
+    width: 656px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    transition: all ease 0.3s;
+}
+.boxSelect.onCreate {
+    top: -300px;
+}
+.buttonBig {
+    float: left;
+    width: auto;
+    margin: 30px;
+    padding: 15px 30px;
+    background: #5A5A5A;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+}
+.buttonBig:hover {
+    background: #1A77AF;
+}
+.subScreen {
+    position: absolute;
+    transition: all ease 0.3s;
+    left: -3000px;
+    top: 300px;
+    padding: 40px 100px 20px 100px;
+    border: 1px solid rgba(17, 117, 177, 0.22);
+    background: #36363E;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 640px;
+    height: 400px;
+    margin: auto;
+}
+.subScreen.show {
+    left: 0;
+}
+.subScreen label {
+    width: 150px;
+    color: #fff;
+}
+.subScreen h2 {
+    margin-bottom: 20px;
+}
+.subScreen .buttonBig {
+    margin-left: 0px;
+}
+.close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url("../images/close.svg") no-repeat 0 0;
+    top: 0px;
+    right: 0px;
+    margin: 10px;
+}
+.projects {
+    position: absolute;
+    top: 50px;
+    height: 320px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.projects li {
+    margin: 5px;
+    background: #2E2E35;
+    padding: 5px;
+    cursor: pointer;
+    list-style: none;
+}
+.projects li:hover {
+    background: #1A77AF;
+}
+.subScreen input,
+.subScreen textarea {
+    width: 200px;
+}
+.row {
+    margin: 10px 0;
+}
+
+.topPanel {
+    background: #222;
+}
+.topMenu {
+    padding: 10px;
+}
+.topMenu .publish {
+    padding: 5px;
+    background: #1A77AF;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.projectName {
+    position: absolute;
+    top: 13px;
+    margin: 0 0 0 30%;
+    font-size: 18px;
+    left: 105px;
+}
+
+
+
+
+
+
+
+/******/
+
+::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: #5A5A5A;
+    border-radius: 7px;
+    border: 1.5px solid #5A5A5A;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    width: 7px;
+    border: 1px solid #4A4A50;
+    border-radius: 7px;
+    background: #36363E;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.area {
+    fill: #B5961C;
+}
+.area {
+    clip-path: url(#clip);
+}
+.zoom text {
+    fill: #FFF;
+    font-size: 20px;
+}
+.brush .extent {
+    stroke: #fff;
+    fill-opacity: .125;
+    shape-rendering: crispEdges;
+}
+.graphs {
+    min-height: 100px;
+    background: #ccc;
+    margin-bottom: 15px;
+    width: 100%;
+}
+.graphs.x1-1 {
+    padding-bottom: 100%;
+}
+.graphs.x4-3 {
+    padding-bottom: 75%;
+}
+.graphs.x1-2 {
+    padding-bottom: 50%;
+}
+.graphs svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+#mapScene {
+    height: 700px;
+    width: 900px;
+    overflow: hidden;
+    position: absolute;
+    left: 100px;
+    top: 60px;
+}
+.leftPanel {
+    width: 50px;
+    height: 100%;
+    background: #222222;
+    position: absolute;
+    left: 0;
+}
+.rightPanel {
+    width: 200px;
+    height: 100%;
+    background: #222222;
+    position: absolute;
+    right: 0;
+}
+.menu > div {
+    margin: 5px 0;
+}
+.icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: top;
+    cursor: pointer;
+}
+.icon.home {
+    background: url("../images/home.png") no-repeat 0 0;
+}
+.icon.data {
+    background: url("../images/data.png") no-repeat 0 0;
+}
+.properties {
+    color: #FFF;
+    padding: 20px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #1A77AF;
+}
+.menuLevel1 {
+    position: absolute;
+    width: 200px;
+    color: #fff;
+    font-size: 12px;
+    left: -250px;
+    z-index: 100;
+    background: #222222;
+    transition: all 0.5;
+    top: 90px;
+}
+.menuLevel1 li:hover {
+    background: #2e2e2e;
+}
+.showLevel .menuLevel1 {
+    left: 50px;
+}
+.data-menu {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.data-menu li {
+    list-style-type: none;
+    padding: 3px;
+}
+
+
+.bigButtons {
+    margin: 10px;
+    background: #1A77AF;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.bigButtons input {
+    display: none;
+}
